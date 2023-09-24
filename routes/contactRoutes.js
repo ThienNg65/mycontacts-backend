@@ -2,10 +2,16 @@ const express = require("express");
 
 const router = express.Router();
 
-const { getAllContacts, createContact, getContact, updateContact, deleteContact, deleteAllContacts, } = require("../controllers/contactController")
+const {
+    getAllContacts,
+    createContact,
+    getContact,
+    updateContact,
+    deleteContact,
+} = require("../controllers/contactController")
 
 // Get all the contact or create new one
-router.route('/').get(getAllContacts).post(createContact).delete(deleteAllContacts);
+router.route('/').get(getAllContacts).post(createContact)
 
 
 // Get a contact, update or delete by its id
