@@ -1,4 +1,5 @@
 # mycontacts-backend
+This project is for those who are new to NodeJS.
 
 # CRUD TEST
 ## Create contact
