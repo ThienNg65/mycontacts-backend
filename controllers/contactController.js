@@ -5,7 +5,8 @@ const Contact = require("../models/contactModel");
 //@route GET /api/contacts
 //@access public
 const getAllContacts = asyncHandler(async (req, res) => {
-    res.status(200).json({ message: "Get all contacts" });
+    const contacts = await Contact.find();
+    res.status(200).json(contacts);
 });
 
 //@desc Create New contacts
@@ -42,4 +43,8 @@ const deleteContact = asyncHandler(async (req, res) => {
     res.status(200).json({ message: `Delete contacts for ${req.params.id}` });
 });
 
-module.exports = { getAllContacts, createContact, getContact, updateContact, deleteContact };
+const deleteAllContacts = asyncHandler(async (req, res) => {
+    res.status(200).json({ message: `Delete contacts for ` });
+});
+
+module.exports = { getAllContacts, createContact, getContact, updateContact, deleteContact, deleteAllContacts };
