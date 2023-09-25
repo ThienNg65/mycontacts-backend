@@ -8,10 +8,13 @@ const {
     getContact,
     updateContact,
     deleteContact,
-} = require("../controllers/contactController")
+} = require("../controllers/contactController");
+const validateToken = require("../middleware/validateTokenHandler");
+
+router.use(validateToken);
 
 // Get all the contact or create new one
-router.route('/').get(getAllContacts).post(createContact)
+router.route('/').get(getAllContacts).post(createContact);
 
 
 // Get a contact, update or delete by its id
